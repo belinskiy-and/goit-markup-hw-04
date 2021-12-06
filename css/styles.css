@@ -130,17 +130,27 @@ p {
   color: var(--accent-color);
 }
 
+.header-ico {
+  fill: currentColor;
+  margin-right: 10px;
+  padding: 0;
+}
+
 .contacts-list {
   display: flex;
   margin-left: auto;
 }
+
+/* .contact-item {
+} */
 
 .contacts-item:not(:last-child) {
   margin-right: 50px;
 }
 
 .contacts-link {
-  display: block;
+  display: flex;
+  /* align-items: center; */
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -154,6 +164,11 @@ p {
 
 .hero {
   background-color: var(--first-block-color);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/bg-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: bottom; */
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
@@ -219,6 +234,17 @@ p {
   margin-top: 30px;
   margin-left: 30px;
   flex-basis: calc((100% - 4 * 30px) / 4);
+}
+
+.container-icon {
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .reason-title {
@@ -300,7 +326,7 @@ p {
 .team-item {
   margin-top: 30px;
   margin-left: 30px;
-  flex-basis: ((100% - 4 * 30px)/4);
+  flex-basis: calc((100% - 4 * 30px) / 4);
 }
 
 .team-item-photo {
@@ -326,9 +352,99 @@ p {
   line-height: 1.19;
   text-align: center;
   color: var(--second-text-color);
+  margin-bottom: 16px;
+}
+
+.team-social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.team-social-item {
+  width: 44px;
+  height: 44px;
+}
+
+.team-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.team-social-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: var(--accent-color);
+  fill: #ffffff;
+}
+
+.team-social-icon {
+  fill: #afb1b8;
+}
+
+.team-social-link:hover .team-social-icon,
+.team-social-link:focus .team-social-icon {
+  fill: #ffffff;
+}
+
+/* ------------------- CLIENTS------------------- */
+
+.clients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-text-color);
+  margin-bottom: 50px;
+}
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.clients-item {
+  width: 170px;
+  height: 92px;
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 6 * 30px) / 6);
+}
+
+.clients-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  color: #afb1b8;
+  /* padding: 16px 32px; */
+}
+
+.clients-item-link:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.clients-item-icon {
+  /* fill: #afb1b8; */
+  fill: currentColor;
 }
 
 /* -------------------FOOTER------------------- */
+
+/* FOOTER CONTACTS */
 
 .footer {
   background-color: var(--first-block-color);
@@ -362,7 +478,7 @@ p {
   color: var(--third-text-color);
 }
 
-.footer-contact {
+.footer-contact-link {
   font-size: 14px;
   line-height: 1.71;
   color: var(--fourth-text-color);
@@ -374,9 +490,63 @@ p {
 
 .footer-address:hover,
 .footer-address:focus,
-.footer-contact:hover,
-.footer-contact:focus {
+.footer-contact-link:hover,
+.footer-contact-link:focus {
   color: var(--accent-color);
+}
+
+/* FOOTER SOCIAL */
+
+.footer-content {
+  display: flex;
+}
+
+.footer-contacts {
+  margin-right: 70px;
+}
+
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--third-text-color);
+  margin-bottom: 20px;
+}
+
+.footer-social-item {
+  width: 44px;
+  height: 44px;
+}
+
+.footer-social-item + .footer-social-item {
+  margin-left: 10px;
+}
+
+.footer-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #44454e;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  color: var(--third-text-color);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.footer-social-icon {
+  fill: currentColor;
 }
 
 /* ==========page PORTFOLIO========== */
@@ -412,6 +582,8 @@ p {
 .projects-filter-btn:focus {
   color: var(--third-text-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .projects-list {
@@ -425,6 +597,17 @@ p {
   margin-top: 30px;
   margin-left: 30px;
   flex-basis: calc((100% - 3 * 30px) / 3);
+}
+
+.project-item-link {
+  display: block;
+  cursor: pointer;
+}
+
+.project-item-link:hover,
+.project-item-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-image {
